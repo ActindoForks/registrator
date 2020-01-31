@@ -10,8 +10,8 @@ dev:
 
 build:
 	mkdir -p build
-	docker build -t $(NAME):$(VERSION) .
-	docker save $(NAME):$(VERSION) | gzip -9 > build/$(NAME)_$(VERSION).tgz
+	docker build -t docker-registry.actindo.net:5000/actindo/$(NAME):$(VERSION) .
+	docker save docker-registry.actindo.net:5000/actindo/$(NAME):$(VERSION) | gzip -9 > build/$(NAME)_$(VERSION).tgz
 
 release:
 	rm -rf release && mkdir release
